@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Web Scraping using R</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/night.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+                <section>
+                <p>
+  			    <h2>Web Scraping using R</h2><br>
+                <h3>Justin Chun-ting Ho</h3>
+                <br>
+                <h4>Materials: <a href="https://github.com/justinchuntingho/" target="_blank">https://github.com/justinchuntingho/</a></h4>
+  			    </p>
+  			  </section>
+              <section>
+                  <img src="serverclient.gif" height="400">
+              </section>
+              <section>
+                  <h2><a href="http://www.sps.ed.ac.uk/staff" target="_blank">Example</a></h2>
+              </section>
+              <section>
+                  <img src="htmlstructure.png" height="600">
+              </section>
+              <section data-background="monkeyr.gif">
+                  <h2 style = "background-color:rgba(0,0,0,0.7);">Time for R</h2>
+              </section>
+              <section>
+                  <h2>Tips for Web Scraping</h2>
+              </section>
+              <section>
+                  <h3>1. Download Once, <br>Load Many Times</h3>
+              </section>
+              <section>
+                  <h3>2. Lay low</h3>
+              </section>
+              <section>
+                  <h3>3. Split the HTML and process each section</h3>
+              </section>
+              <section>
+                  <h3>4. Always start at Page 2</h3>
+                  <h3><a href="http://www.imdb.com/search/title?count=100&release_date=2017,2017&title_type=feature" target="_blank">Example</a></h3>
+              </section>
+              <section>
+                  <h3>5. Sometimes, you can "hack" the website</h3>
+                  <h3><a href="http://www.imdb.com/search/title?count=100&release_date=2017,2017&title_type=feature" target="_blank">Example</a></h3>
+              </section>
+              <section>
+                  <h3>6. Respect the rules and limits of the websites</h3>
+              </section>
+                <section>
+                    <h3>Thank you very much!</h3><br>
+                  <h4>Twitter: @justin_ct_ho<br>Github: justinchuntingho<br>Email: Jusitn.Ho@ed.ac.uk</h4><br>
+                  <h4>Edinburgh Text Analysis Research Group: <a href="http://www.sociology.ed.ac.uk/edta" target="_blank">http://www.sociology.ed.ac.uk/edta</a></h4>
+                </section>
+            </div>
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+            // More info about config & dependencies:
+            // - https://github.com/hakimel/reveal.js#configuration
+            // - https://github.com/hakimel/reveal.js#dependencies
+            Reveal.initialize({
+                dependencies: [
+                    { src: 'plugin/markdown/marked.js' },
+                    { src: 'plugin/markdown/markdown.js' },
+                    { src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+                ]
+            });
+        </script>
+    </body>
+</html>
