@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Web Scraping using R</title>
+		<title></title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/night.css">
@@ -25,67 +25,49 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-                <section>
-                <p>
-                <h4>Edinburgh Text Analysis Research Group</h4>
-  			    <h2>Web Scraping using R</h2><br>
-                <h3>Justin Chun-ting Ho</h3>
-                <h4>Materials: <a href="https://github.com/justinchuntingho/" target="_blank">https://github.com/justinchuntingho/</a></h4>
-  			    </p>
-  			  </section>
+				<section>
+						<h3>What I did</h3>
+						<ol>
+								<li>Randomly draw 1000 articles from each country</li>
+								<li>Remove duplications</li>
+								<li>Obtain word embeddings</li>
+								<li>Clustering</li>
+							</ol>
+				</section>
               <section>
-                  <h3>Unpacking the black box of <br>the world wide web</h3>
+								<h3>Word Embeddings</h3>
+                  <img src="wordembeddings.png" height="400">
               </section>
               <section>
-                  <h4>1. What happens between <br>your browser and the server</h4>
-                  <img src="serverclient.gif" height="400">
+                  <img src="chan.png" height="600">
               </section>
               <section>
-                  <h4>2. Relationship between between htmls</h4>
-                  <img src="websitehierarchy.jpg" height="400">
-              </section>
-              <section>
-                  <h3>Workflow of Webscraping</h3>
+                  <h4>Assumption: <br>DFM contains three types of information</h4>
                   <ol>
-                      <li>Send a request to the server</li>
-                      <li>Store the html file</li>
-                      <li>Either: a. extract the information; or <br>b. extract the links</li>
-                      <li>Use the links to send more requests <br>(repeat step 1 to 3)</li></ol></h4>
+                      <li>Systematic language variations</li>
+                      <li>Topical variations</li>
+                      <li>Non-topical variations (eg random noise)</li>
+										</ol>
               </section>
-              <section>
-                  <h2><a href="http://www.sps.ed.ac.uk/staff" target="_blank">Example</a></h2>
+							<section>
+                  <h3>Singular Vector Decomposition</h3>
+									<p><ol>
+										<li>Rank dimentions by the variance they explain</li>
+										<li>Discard the highest ones <br>(ie they are language variations)</li>
+										<li>Discard the lowest ones <br>(ie they are noise)</li>
+									</ol>
               </section>
-              <section data-background="monkeyr.gif">
-                  <h2 style = "background-color:rgba(0,0,0,0.7);">Time for R</h2>
-              </section>
-              <section>
-                  <h2>Tips for Web Scraping</h2>
-              </section>
-              <section>
-                  <h3>1. Download Once, <br>Load Many Times</h3>
-              </section>
-              <section>
-                  <h3>2. Lay low</h3>
-              </section>
-              <section>
-                  <h3>3. Split the HTML and process each section</h3>
-              </section>
-              <section>
-                  <h3>4. Always start at Page 2</h3>
-                  <h3><a href="http://www.imdb.com/search/title?count=100&release_date=2017,2017&title_type=feature" target="_blank">Example</a></h3>
-              </section>
-              <section>
-                  <h3>5. Sometimes, you can "hack" the website</h3>
-                  <h3><a href="http://www.imdb.com/search/title?count=100&release_date=2017,2017&title_type=feature" target="_blank">Example</a></h3>
-              </section>
-              <section>
-                  <h3>6. Respect the rules and limits of the websites</h3>
-              </section>
-                <section>
-                    <h3>Thank you very much!</h3><br>
-                  <h4>Twitter: @justin_ct_ho<br>Github: justinchuntingho<br>Email: Jusitn.Ho@ed.ac.uk</h4><br>
-                  <h4>Edinburgh Text Analysis Research Group: <a href="http://www.sociology.ed.ac.uk/edta" target="_blank">http://www.sociology.ed.ac.uk/edta</a></h4>
-                </section>
+							<section>
+									<h3>K-Medoids Clustering</h3>
+									<p><ol>
+										<li>Calculate document-to-document similarity</li>
+										<li>Cluster all documents into 13 clusters <br>(each cluster represents one topic)</li>
+										<li>Extract the most central documents of each cluster for validation</li>
+									</ol>
+							</section>
+							<section data-background-color="#ffffff" data-background-iframe="3d.html" data-background-interactive>
+							</section>
+
             </div>
         </div>
 
